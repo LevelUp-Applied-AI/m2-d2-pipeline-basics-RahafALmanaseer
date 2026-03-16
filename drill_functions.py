@@ -7,6 +7,10 @@ Do not change the function signatures.
 """
 
 import pandas as pd
+def clean_column(series):
+    median_value = series.median()
+    series = series.fillna(median_value)
+    return series
 
 
 def clean_column(series):
@@ -20,7 +24,15 @@ def clean_column(series):
     """
     # TODO: Fill NaN values with series.median()
     # TODO: Return the cleaned Series
-    pass
+    # drill_functions.py
+
+import pandas as pd
+
+def clean_column(series):
+    """Fill NaN values with the series median. Returns the cleaned Series."""
+    median_value = series.median()
+    series = series.fillna(median_value)
+    return series
 
 
 def compute_revenue(quantity, price):
@@ -35,4 +47,8 @@ def compute_revenue(quantity, price):
     """
     # TODO: Multiply quantity and price element-wise
     # TODO: Return the result
-    pass
+    
+def compute_revenue(quantity, price):
+    """Multiply quantity and price element-wise. Returns a revenue Series."""
+    revenue = quantity * price
+    return revenue
