@@ -8,7 +8,6 @@ Do not change the function signatures.
 
 import pandas as pd
 
-
 def clean_column(series):
     """Fill NaN values with the series median. Returns the cleaned Series.
 
@@ -18,9 +17,8 @@ def clean_column(series):
     Returns:
         pd.Series: The Series with NaN values replaced by the median.
     """
-    # TODO: Fill NaN values with series.median()
-    # TODO: Return the cleaned Series
-    pass
+    median_value = series.median()
+    return series.fillna(median_value)
 
 
 def compute_revenue(quantity, price):
@@ -33,6 +31,4 @@ def compute_revenue(quantity, price):
     Returns:
         pd.Series: Element-wise product of quantity and price.
     """
-    # TODO: Multiply quantity and price element-wise
-    # TODO: Return the result
-    pass
+    return quantity * price
